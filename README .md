@@ -3,26 +3,27 @@
 ##DATABASE OVERVIEW:
 
 This database has been created for Sparkify for the following analytical purposes:
-'''
+
+```
 
 - To orgainze user demographics such as first name, last name, gender, and to capture user agent used for accessing Sparkify
     
 - To organize listening information of users such as song, artist, and start times of each listening session
     
 - To organize music information such as song titles and info about the artist such as artist name and location
-'''
+```
 
 Through the implementation of a Postgres database to utilize and organize the data goals above, **Sparkify can now query the database to obtain analytics on what songs their users are listening to.** This, above all else, has been prioritized through this database with built in queries supplying data to the 'songplays' table, which contains info on what song the user is listening to via multiple fact tables. 
 
 ##ETL PIPELINE DESCRIPTION:
 
 This postgres database utilizes an ETL pipeline to fill fact tables to support a main dimensional table (songplays). Below I will outline the database schema and how it opperates in this pipe line.
-'''
+```
 - Two JSON datafiles are being accessed. Song_data and Log_data. The first being handled is Song_data.
 - Four fact tables exist: songs, artists, time, users
 - One dimensional table exists: songplays 
 
-'''
+```
 
 from sqlalchemy_schemadisplay import create_schema_graph
 from sqlalchemy import MetaData
